@@ -12,7 +12,59 @@
   <div class="m-1"></div>
 
   <input placeholder="Enter something..." type="text" value="Virat Kohli" />
-  <input value="{{myName}}" class="mx-2" />
-  <input [value]="myName" class="mx-2" />
-  <input bind-value="myName" class="mx-2" />
+  1 way:<input value="{{myName}}" class="mx-2" />
+  1 way:<input [value]="myName" class="mx-2" />
+  1 way:<input bind-value="myName" class="mx-2" /><br />
+  2 way:<input [(ngModel)]="myName" class="mx-2" />
+  2 way:<input bindon-ngModel="myName" class="mx-2" />
+  <div class="m-1"></div>
+
+  <button class="btn btn-success mx-2" disabled>Click Me</button>
+  <button class="btn btn-success mx-2" disabled="{{flag}}">Click Me</button>
+  <button class="btn btn-success mx-2" [disabled]="flag">Click Me</button>
+  <button class="btn btn-success mx-2" bind-disabled="flag">Click Me</button>
+
+
+  <button class="btn btn-success mx-2" (click)="f1()">invoke F1</button>
+  <button class="btn btn-success mx-2" on-click="f1()">invoke F1</button>
+</div>
+
+<div class="p-2 m-2 border border border-3 rounded-3">
+  <div>Property & Attribute DataBinding</div>
+  <input type="text" value="Virat Kohli" id="mybox1">
+
+  <table class="table table-bordered">
+    <tbody>
+      <tr>
+        <th>Month</th>
+        <th>Savings</th>
+        <th>Savings for holiday!</th>
+      </tr>
+      <tr>
+        <td>January</td>
+        <td>$100</td>
+        <!-- <td [rowSpan]="rowspanValue">$50</td> -->
+        <td [attr.rowspan]="rowspanValue">$50</td>
+      </tr>
+      <tr>
+        <td>February</td>
+        <td>$80</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="p-2 m-2 border border border-3 rounded-3">
+  <div>Add 2 numbers using 2-way binding:</div>
+  Num1: <input type="number" [(ngModel)]="num1" class="mx-2" />
+  Num2: <input type="number" [(ngModel)]="num2" />
+  <div>Addition of {{num1}} & {{num2}} is {{num1+num2}}</div>
+</div>
+
+<div class="p-2 m-2 border border border-3 rounded-3">
+  <div>Add 2 numbers using Template Reference variable:</div>
+  Num1: <input type="number" #box1 />
+  Num2: <input type="number" ref-box2 />
+  <button class="btn btn-primary" (click)="addition(box1.value , box2.value)">Add</button>
+  <div>Addition is {{addResult}}</div>
 </div>
