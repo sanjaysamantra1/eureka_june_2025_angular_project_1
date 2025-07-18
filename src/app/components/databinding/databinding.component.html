@@ -1,4 +1,10 @@
-<h3 class="text-center">Let's Learn DataBinding</h3>
+<style>
+  img {
+    border-radius: 40px;
+  }
+</style>
+
+<h3 class="text-center" style="color:aquamarine">Let's Learn DataBinding</h3>
 
 <div class="p-2 m-2 border border border-3 rounded-3">
   <div>Name is: {{myName}}</div>
@@ -67,4 +73,66 @@
   Num2: <input type="number" ref-box2 />
   <button class="btn btn-primary" (click)="addition(box1.value , box2.value)">Add</button>
   <div>Addition is {{addResult}}</div>
+</div>
+
+<div class="p-2 m-2 border border border-3 rounded-3">
+  <div>Assignment-1 (Toggle Visibility)</div>
+  <h1 [hidden]="!flag">Helloooooooooooooooooooooooooooooooooooooooooooo</h1>
+  <button class="btn btn-primary" (click)="toggleFlag()">{{flag?'Hide':'Show'}}</button>
+</div>
+
+<div class="p-2 m-2 border border border-3 rounded-3">
+  <div>Assignment-2, text-area with Remaining Characters</div>
+  <textarea maxlength="100" [(ngModel)]="msg"></textarea>
+  <div>Remaining Characters: {{100 - msg.length}}</div>
+</div>
+
+<div class="p-2 m-2 border border border-3 rounded-3">
+  <div>Assignment-3, print the selected dropdown value</div>
+  <select [(ngModel)]="selectedState">
+    <option>State-1</option>
+    <option>State-2</option>
+    <option>State-3</option>
+    <option>State-4</option>
+    <option>State-5</option>
+    <option>State-6</option>
+    <option>State-7</option>
+    <option>State-8</option>
+    <option>State-9</option>
+    <option>State-10</option>
+  </select>
+  <div>Selected state:{{selectedState}}</div>
+</div>
+
+<div class="p-2 m-2 border border border-3 rounded-3">
+  <div>Assignment-4,perform arithmetic operations</div>
+  <input type="number" [(ngModel)]="num1" />
+  <select [(ngModel)]="op" class="mx-3">
+    <option>+</option>
+    <option>-</option>
+    <option>*</option>
+    <option>/</option>
+  </select>
+  <input type="number" [(ngModel)]="num2" />
+
+  <div>{{num1}} {{op}} {{num2}} is: {{performOperation()}}</div>
+</div>
+
+<div class="p-2 m-2 border border border-3 rounded-3">
+  <div>Assignment-5, toggle the type of input box to (text/password)</div>
+  <input [type]="flag ? 'password' : 'text' " value="abcdef" />
+  <button class="btn btn-primary mx-2" (click)="flag=!flag">Toggle password</button>
+</div>
+
+<div class="p-2 m-2 border border border-3 rounded-3">
+  <div>Assignment-6, increment decrement and reset</div>
+  <h2>Count is: {{count}}</h2>
+  <button class="btn btn-secondary" (click)="count = count-1">Decrement</button>
+  <button class="btn btn-danger mx-2" (click)="count = 0">Reset</button>
+  <button class="btn btn-primary" (click)="count = count+1">Increment</button>
+</div>
+
+<div class="p-2 m-2 border border border-3 rounded-3">
+  <div>Assignment-7, Dark / Light Theme</div>
+  <button class="btn btn-primary" (click)="changeTheme()">{{flag?'Dark':'Light'}}</button>
 </div>
