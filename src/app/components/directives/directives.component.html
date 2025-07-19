@@ -1,0 +1,86 @@
+<h3 class="text-center">Let's Learn Directives</h3>
+
+<div class="p-2 m-2 border border border-3 rounded-3">
+  <input type="number" [(ngModel)]="num">
+
+  <div>Before Angular-17:</div>
+  <div *ngIf="num%2==0">{{num}} is even</div>
+  <div *ngIf="num%2!==0">{{num}} is Odd</div>
+
+  <div>After Angular-17:</div>
+  @if(num%2==0){
+  <div>{{num}} is even</div>
+  }@else {
+  <div>{{num}} is Odd</div>
+  }
+</div>
+
+<div class="p-2 m-2 border border border-3 rounded-3">
+  <div>hidden vs if</div>
+  <button class="btn btn-primary" (click)="flag=!flag">Toggle Flag - {{flag}}</button>
+
+  <h1 [hidden]="!flag">Hellooooooooooo</h1>
+  @if(flag){
+  <h1>Hiiiiiiiiiiiiiiiiiiiiiiiiiii</h1>
+  }
+</div>
+
+<div class="p-2 m-2 border border border-3 rounded-3">
+  <div>Switch Case</div>
+  @switch (num) {
+  @case (1) { <h1>Monday</h1> }
+  @case (2) { <h1>Tuesday</h1> }
+  @case (3) { <h1>Wednesday</h1> }
+  @case (4) { <h1>Thursday</h1> }
+  @case (5) { <h1>Friday</h1> }
+  @case (6) { <h1>Saturday</h1> }
+  @case (7) { <h1>Sunday</h1> }
+  @default { <h1>Not a Valid number</h1> }
+  }
+</div>
+
+<div class="p-2 m-2 border border border-3 rounded-3">
+  <div>For Loop, Car List</div>
+  <ol>
+    @for(car of cars;track $index){
+    <li>{{car}}</li>
+    }@empty {
+    No Cars to display
+    }
+  </ol>
+</div>
+
+<div class="p-2 m-2 border border border-3 rounded-3">
+  <div>Employee Table</div>
+
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>Index</th>
+        <th>eid</th>
+        <th>name</th>
+        <th>salary</th>
+        <th>gender</th>
+        <th>is First?</th>
+        <th>is Last?</th>
+        <th>is Even?</th>
+        <th>is Odd?</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for(emp of employees;track $index){
+        <tr>
+          <td>{{$index + 1}}</td>
+          <td>{{emp.eId}}</td>
+          <td>{{emp.name}}</td>
+          <td>{{emp.sal}}</td>
+          <td>{{emp.gender}}</td>
+          <td>{{$first}}</td>
+          <td>{{$last}}</td>
+          <td>{{$even}}</td>
+          <td>{{$odd}}</td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>
