@@ -3,8 +3,7 @@
 <div class="p-2 m-2 border border border-3 rounded-3">
   <input type="number" [(ngModel)]="num">
 
-  <div>Before Angular-17:</div>
-  <div *ngIf="num%2==0">{{num}} is even</div>
+  <div>Before Angular-17</div>
   <div *ngIf="num%2!==0">{{num}} is Odd</div>
 
   <div>After Angular-17:</div>
@@ -69,18 +68,61 @@
     </thead>
     <tbody>
       @for(emp of employees;track $index){
-        <tr>
-          <td>{{$index + 1}}</td>
-          <td>{{emp.eId}}</td>
-          <td>{{emp.name}}</td>
-          <td>{{emp.sal}}</td>
-          <td>{{emp.gender}}</td>
-          <td>{{$first}}</td>
-          <td>{{$last}}</td>
-          <td>{{$even}}</td>
-          <td>{{$odd}}</td>
-        </tr>
+      <tr>
+        <td>{{$index + 1}}</td>
+        <td>{{emp.eId}}</td>
+        <td>{{emp.name}}</td>
+        <td>{{emp.sal}}</td>
+        <td>{{emp.gender}}</td>
+        <td>{{$first}}</td>
+        <td>{{$last}}</td>
+        <td>{{$even}}</td>
+        <td>{{$odd}}</td>
+      </tr>
       }
     </tbody>
   </table>
+</div>
+
+<div class="p-2 m-2 border border border-3 rounded-3">
+  <div>Ng Style</div> <input type="number" [(ngModel)]="num">
+  <div style="color:red;border:2px solid green">This is a div with static styling</div>
+
+  <p [style.color]="num % 2 == 0 ? 'blue' : 'red'"> Add a style </p>
+  <p [style.fontSize.px]='num % 2 == 0 ? 48 : 24'> Add style with unit </p>
+  <p [style.background-color]="flag?'green':'blue' "> Add style conditionally </p>
+  <p [ngStyle]="num % 2 == 0 ? myStyle1 : myStyle2"> NgStyle for multiple values </p>
+  <p [ngStyle]="myFunction()"> NgStyle for multiple values </p>
+</div>
+
+<div class="p-2 m-2 border border border-3 rounded-3">
+  <div>Ng Class</div> <input type="number" [(ngModel)]="num">
+  <button class="btn btn-primary">button with static classes</button>
+
+  <p [class.myClass]='flag'> Add a class to an element </p>
+  <button class="btn btn-primary" (click)="flag=!flag">Toggle Flag - {{flag}}</button>
+  <p [ngClass]="myClasses"> Add Multiple classes to an element </p>
+  <p [ngClass]="getClassNames()"> Add Multiple classes to an element </p>
+  <button class="btn" [ngClass]="flag ? 'btn-success' : 'btn-danger'">
+    Class Binding example
+  </button>
+
+</div>
+<div class="p-2 m-2 border border border-3 rounded-3">
+  <div>Ng Template</div>
+  <div *ngIf="isLoggedIn; else notLoggedIn">
+    Welcome, user! 🎉
+  </div>
+  <ng-template #notLoggedIn>
+    <p>Please log in to continue.</p>
+  </ng-template>
+  <button class="btn btn-primary" (click)="isLoggedIn=!isLoggedIn">Toggle login</button>
+</div>
+<div class="p-2 m-2 border border border-3 rounded-3">
+  <div>Ng Container</div>
+  <ng-container *ngIf="flag">
+    <div *ngFor="let ele of arr">
+      hello
+    </div>
+  </ng-container>
 </div>
