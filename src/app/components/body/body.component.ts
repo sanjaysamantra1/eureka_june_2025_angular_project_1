@@ -3,6 +3,7 @@ import { DatabindingComponent } from '../databinding/databinding.component';
 import { DirectivesComponent } from '../directives/directives.component';
 import { StocksComponent } from '../stocks/stocks.component';
 import { ProductListComponent } from '../product-list/product-list.component';
+import { MyModalComponent } from '../my-modal/my-modal.component';
 
 @Component({
   selector: 'app-body',
@@ -11,6 +12,7 @@ import { ProductListComponent } from '../product-list/product-list.component';
     DirectivesComponent
     // StocksComponent
     // ProductListComponent
+    // MyModalComponent
   ],
   templateUrl: './body.component.html',
   styleUrl: './body.component.css',
