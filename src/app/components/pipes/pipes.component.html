@@ -1,0 +1,39 @@
+<h3 class="text-center">Let's Learn Directives</h3>
+
+<div class="p-2 m-2 border border-2 rounded-2">
+  <div>Without Pipe: {{myName}}</div>
+  <div>With uppercase Pipe: {{myName | uppercase}}</div>
+  <div>With lowercase Pipe: {{myName | lowercase}}</div>
+  <div>With titlecase Pipe: {{myName | titlecase}}</div>
+</div>
+
+<div class="p-2 m-2 border border-2 rounded-2">
+  <div>Currency Pipe:</div>
+  <div> {{mySal }}</div>
+  <div> {{mySal | currency }}</div>
+  <div>{{ 5000 | currency : 'USD' : 'symbol' }}</div>
+  <div>{{ 5000 | currency : 'USD' : 'code' }}</div>
+  <div> {{mySal | currency : 'INR' }}</div>
+  <!-- input | pipeName : arg-1 : arg-2 -->
+  <div> {{mySal | currency : '&euro;' }}</div>
+  <div> {{mySal | currency : '&#20803;' }}</div>
+</div>
+
+<div class="p-2 m-2 border border-2 rounded-2">
+  <div>Date Pipe:</div>
+  <div>{{today}}</div>
+
+  <div>{{today | date}}</div>
+
+  <div>{{today | date : 'shortDate'}}</div>
+  <div>{{today | date : 'mediumDate'}}</div>
+  <div>{{today | date : 'longDate'}}</div>
+
+  <div>{{today | date : 'fullDate'}}</div>
+  <div>{{today | date : 'shortTime'}}</div>
+  <div>{{today | date : 'mediumTime'}}</div>
+  <div>{{today | date : 'longTime'}}</div>
+  <div>{{today | date : 'fullTime'}}</div>
+
+  <div>{{today | date : 'dd-MMMM-yyyy'}}</div>
+</div>

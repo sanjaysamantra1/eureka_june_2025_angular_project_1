@@ -4,15 +4,17 @@ import { DirectivesComponent } from '../directives/directives.component';
 import { StocksComponent } from '../stocks/stocks.component';
 import { ProductListComponent } from '../product-list/product-list.component';
 import { MyModalComponent } from '../my-modal/my-modal.component';
+import { PipesComponent } from '../pipes/pipes.component';
 
 @Component({
   selector: 'app-body',
   imports: [
     // DatabindingComponent,
-    DirectivesComponent
+    // DirectivesComponent
     // StocksComponent
     // ProductListComponent
     // MyModalComponent
+    PipesComponent
   ],
   templateUrl: './body.component.html',
   styleUrl: './body.component.css',
