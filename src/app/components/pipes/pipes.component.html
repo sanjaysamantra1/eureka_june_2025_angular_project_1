@@ -37,3 +37,45 @@
 
   <div>{{today | date : 'dd-MMMM-yyyy'}}</div>
 </div>
+
+<div class="p-2 m-2 border border-2 rounded-2">
+  <div>Number & Percent Pipe</div>
+  <div>{{ 12.111222333 | number: "3.2-5" }}</div>
+  <div>{{ 12.1 | number: "3.2-5" }}</div>
+  <div>{{ .75 | percent }}</div>
+  <div>{{ .5 | percent }}</div>
+</div>
+
+<div class="p-2 m-2 border border-2 rounded-2">
+  <div>json Pipe</div>
+  <div>{{ user }}</div>
+  <div>{{ user.name }}</div>
+  <div>{{ user | json }}</div>
+
+  @for(entry of user | keyvalue;track $index){
+  <h5>{{entry.key}}---{{entry.value}}</h5>
+  }
+</div>
+
+<div class="p-2 m-2 border border-2 rounded-2">
+  <div>slice Pipe</div>
+  <div>{{arr}}</div>
+  <div>{{ arr | slice : 2 : 4}}</div>
+  <div>{{ arr | slice : 2 }}</div>
+</div>
+
+<div class="p-2 m-2 border border-2 rounded-2">
+  <div>Custom Pipe : Remaining Characters</div>
+
+  <textarea [(ngModel)]="msg1" maxlength="100"></textarea>
+  <div>Remaining Chars: {{msg1 | remaining }}</div>
+
+  <textarea [(ngModel)]="msg2" maxlength="200"></textarea>
+  <div>Remaining Chars: {{msg2 | remaining : 200}}</div>
+</div>
+
+<div class="p-2 m-2 border border-2 rounded-2">
+  <div>Custom Pipe : Ordinal</div>
+  <input type="number" [(ngModel)]="cardinal" />
+  <div>Ordinal value : {{cardinal | ordinal}}</div>
+</div>
