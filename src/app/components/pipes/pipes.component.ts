@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RemainingPipe } from '../../pipes/remaining.pipe';
 import { OrdinalPipe } from '../../pipes/ordinal.pipe';
+import { MysortPipe } from '../../pipes/mysort.pipe';
 
 @Component({
   selector: 'app-pipes',
@@ -10,7 +11,8 @@ import { OrdinalPipe } from '../../pipes/ordinal.pipe';
     CommonModule,
     FormsModule,
     RemainingPipe,
-    OrdinalPipe
+    OrdinalPipe,
+    MysortPipe
   ],
   templateUrl: './pipes.component.html',
   styleUrl: './pipes.component.css'
@@ -21,7 +23,7 @@ export class PipesComponent {
   today: Date = new Date();
 
   user = { name: 'virat kohli', age: 37, add: 'delhi' };
-  arr = [10, 20, 30, 40, 50, 60, 70];
+  arr = [50, 10, 20, 40, 30];
 
   msg1 = '';
   msg2 = '';

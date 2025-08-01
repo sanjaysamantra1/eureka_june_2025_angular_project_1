@@ -79,3 +79,13 @@
   <input type="number" [(ngModel)]="cardinal" />
   <div>Ordinal value : {{cardinal | ordinal}}</div>
 </div>
+
+<div class="p-2 m-2 border border-2 rounded-2">
+  <div>Pure & Impure Pipe</div>
+  @for(ele of arr | mysort;track $index){
+  <span>{{ele}} &nbsp;</span>
+  }
+
+  <input type="number" #newNum />
+  <button (click)="arr.push(+newNum.value)">Add new number</button>
+</div>
