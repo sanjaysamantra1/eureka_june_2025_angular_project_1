@@ -9,6 +9,7 @@ import { ParentComponent } from '../parent/parent.component';
 import { Math1Component } from '../math1/math1.component';
 import { Math2Component } from '../math2/math2.component';
 import { HttpDemo1Component } from '../http-demo1/http-demo1.component';
+import { EmployeesComponent } from '../employees/employees.component';
 
 @Component({
   selector: 'app-body',
@@ -22,7 +23,8 @@ import { HttpDemo1Component } from '../http-demo1/http-demo1.component';
     // ParentComponent
     // Math1Component,
     // Math2Component
-    HttpDemo1Component
+    // HttpDemo1Component
+    EmployeesComponent
   ],
   templateUrl: './body.component.html',
   styleUrl: './body.component.css',

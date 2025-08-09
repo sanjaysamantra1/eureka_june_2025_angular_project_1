@@ -1,0 +1,17 @@
+<h2 class="text-center">Employee List</h2>
+
+<table class="table table-bordered table-striped">
+  <tbody>
+    @for(emp of employeeArr;track $index){
+      <tr>
+        <td>{{emp.id}}</td>
+        <td>{{emp.firstName}}</td>
+        <td>{{emp.lastName}}</td>
+        <td>{{emp.getFullName()}}</td>
+        <!-- <td>{{emp.email}}</td> -->
+        <td>{{emp.gender}}</td>
+        <td>{{emp.sal}}</td>
+      </tr>
+    }
+  </tbody>
+</table>
