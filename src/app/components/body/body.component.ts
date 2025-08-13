@@ -12,6 +12,8 @@ import { HttpDemo1Component } from '../http-demo1/http-demo1.component';
 import { EmployeesComponent } from '../employees/employees.component';
 import { ObservableDemo1Component } from '../observable-demo1/observable-demo1.component';
 import { ObservableDemo2Component } from '../observable-demo2/observable-demo2.component';
+import { ObservableDemo3Component } from '../observable-demo3/observable-demo3.component';
+import { ObservableDemo4Component } from '../observable-demo4/observable-demo4.component';
 
 @Component({
   selector: 'app-body',
@@ -28,7 +30,9 @@ import { ObservableDemo2Component } from '../observable-demo2/observable-demo2.c
     // HttpDemo1Component
     // EmployeesComponent
     // ObservableDemo1Component
-    ObservableDemo2Component
+    // ObservableDemo2Component
+    // ObservableDemo3Component
+    ObservableDemo4Component
 
   ],
   templateUrl: './body.component.html',
