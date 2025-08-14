@@ -17,6 +17,8 @@ import { ObservableDemo4Component } from '../observable-demo4/observable-demo4.c
 import { ObservableDemo5Component } from '../observable-demo5/observable-demo5.component';
 import { TodoListComponent } from '../todo-list/todo-list.component';
 import { TodoAddComponent } from '../todo-add/todo-add.component';
+import { FormDemo1Component } from '../form-demo1/form-demo1.component';
+import { TemplateFormComponent } from '../template-form/template-form.component';
 
 @Component({
   selector: 'app-body',
@@ -37,9 +39,10 @@ import { TodoAddComponent } from '../todo-add/todo-add.component';
     // ObservableDemo3Component
     // ObservableDemo4Component
     // ObservableDemo5Component
-    TodoListComponent,
-    TodoAddComponent
-
+    // TodoListComponent,
+    // TodoAddComponent
+    // FormDemo1Component
+    TemplateFormComponent
   ],
   templateUrl: './body.component.html',
   styleUrl: './body.component.css',

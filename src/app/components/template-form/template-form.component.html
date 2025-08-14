@@ -1,0 +1,38 @@
+<h3 class="text-center">Lets Learn Template Driven Form</h3>
+
+<div class="border border-3 rounded-3 p-2 col-sm-4 offset-4">
+  <form #empForm="ngForm" (submit)="submitMyForm(empForm.value)">
+    <p>
+      First Name :
+      <input name="firstName" ngModel />
+    </p>
+    <p>
+      Last Name :
+      <input name="lastName" ngModel />
+    </p>
+    <p>
+      Email :
+      <input name="email" ngModel type="email" />
+    </p>
+    <div ngModelGroup="address">
+      <p>
+        City :
+        <input name="city" ngModel />
+      </p>
+      <p>
+        Country :
+        <input name="country" ngModel />
+      </p>
+      <p>
+        Pincode :
+        <input name="pincode" ngModel />
+      </p>
+    </div>
+
+    <input type="submit" value="Submit" class="btn btn-primary mx-2" />
+    <input type="reset" value="Clear" class="btn btn-danger" />
+  </form>
+  <pre>
+    {{empForm.value | json}}
+  </pre>
+</div>
