@@ -1,0 +1,10 @@
+<p>todo-list works!</p>
+
+<ol>
+  @for(todo of todos$ | async; track $index){
+    <li>
+      {{todo.value}}
+      <button class="btn btn-danger" (click)="deleteTodo(todo.id)">Delete</button>
+    </li>
+  }
+</ol>

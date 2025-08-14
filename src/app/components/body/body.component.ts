@@ -14,6 +14,9 @@ import { ObservableDemo1Component } from '../observable-demo1/observable-demo1.c
 import { ObservableDemo2Component } from '../observable-demo2/observable-demo2.component';
 import { ObservableDemo3Component } from '../observable-demo3/observable-demo3.component';
 import { ObservableDemo4Component } from '../observable-demo4/observable-demo4.component';
+import { ObservableDemo5Component } from '../observable-demo5/observable-demo5.component';
+import { TodoListComponent } from '../todo-list/todo-list.component';
+import { TodoAddComponent } from '../todo-add/todo-add.component';
 
 @Component({
   selector: 'app-body',
@@ -32,7 +35,10 @@ import { ObservableDemo4Component } from '../observable-demo4/observable-demo4.c
     // ObservableDemo1Component
     // ObservableDemo2Component
     // ObservableDemo3Component
-    ObservableDemo4Component
+    // ObservableDemo4Component
+    // ObservableDemo5Component
+    TodoListComponent,
+    TodoAddComponent
 
   ],
   templateUrl: './body.component.html',
