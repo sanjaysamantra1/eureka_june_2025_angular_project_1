@@ -1,0 +1,39 @@
+<h4 class="text-center">Let's Learn Model-Driven Form / Reactive Form</h4>
+
+<div class="border border-3 rounded-3 p-2 col-sm-5 offset-4">
+  <form [formGroup]="registerForm" (submit)="submitMyForm()">
+    <p>
+      FirstName: <input formControlName="firstname">
+      <span class="text-danger mx-1" *ngIf="registerForm.controls.firstname.hasError('required')">FirstName is
+        Required</span>
+      <span class="text-danger  mx-1" *ngIf="registerForm.controls.firstname.hasError('minlength')">FirstName should
+        have minimum 5 chars</span>
+    </p>
+    <p>
+      LastName: <input formControlName="lastname">
+    </p>
+    <p>
+      Email: <input formControlName="email">
+    </p>
+    <p>
+      Phone: <input formControlName="phone">
+    </p>
+    <div formGroupName="address">
+      <p>
+        City: <input formControlName="city">
+      </p>
+      <p>
+        Country: <input formControlName="country">
+      </p>
+      <p>
+        PinCode: <input formControlName="pincode">
+      </p>
+    </div>
+
+    <input type="submit" value="Submit" class="btn btn-primary" />
+    <input type="reset" value="clear" class="mx-2 btn btn-danger">
+  </form>
+  <pre>
+    {{registerForm.value |json}}
+  </pre>
+</div>

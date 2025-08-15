@@ -19,6 +19,7 @@ import { TodoListComponent } from '../todo-list/todo-list.component';
 import { TodoAddComponent } from '../todo-add/todo-add.component';
 import { FormDemo1Component } from '../form-demo1/form-demo1.component';
 import { TemplateFormComponent } from '../template-form/template-form.component';
+import { ModelDrivenFormComponent } from '../model-driven-form/model-driven-form.component';
 
 @Component({
   selector: 'app-body',
@@ -42,7 +43,8 @@ import { TemplateFormComponent } from '../template-form/template-form.component'
     // TodoListComponent,
     // TodoAddComponent
     // FormDemo1Component
-    TemplateFormComponent
+    // TemplateFormComponent
+    ModelDrivenFormComponent
   ],
   templateUrl: './body.component.html',
   styleUrl: './body.component.css',
