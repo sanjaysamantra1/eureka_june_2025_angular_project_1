@@ -20,6 +20,7 @@ import { TodoAddComponent } from '../todo-add/todo-add.component';
 import { FormDemo1Component } from '../form-demo1/form-demo1.component';
 import { TemplateFormComponent } from '../template-form/template-form.component';
 import { ModelDrivenFormComponent } from '../model-driven-form/model-driven-form.component';
+import { DynamicFormComponent } from '../dynamic-form/dynamic-form.component';
 
 @Component({
   selector: 'app-body',
@@ -44,7 +45,8 @@ import { ModelDrivenFormComponent } from '../model-driven-form/model-driven-form
     // TodoAddComponent
     // FormDemo1Component
     // TemplateFormComponent
-    ModelDrivenFormComponent
+    // ModelDrivenFormComponent
+    DynamicFormComponent
   ],
   templateUrl: './body.component.html',
   styleUrl: './body.component.css',
