@@ -21,6 +21,7 @@ import { FormDemo1Component } from '../form-demo1/form-demo1.component';
 import { TemplateFormComponent } from '../template-form/template-form.component';
 import { ModelDrivenFormComponent } from '../model-driven-form/model-driven-form.component';
 import { DynamicFormComponent } from '../dynamic-form/dynamic-form.component';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-body',
@@ -46,8 +47,9 @@ import { DynamicFormComponent } from '../dynamic-form/dynamic-form.component';
     // FormDemo1Component
     // TemplateFormComponent
     // ModelDrivenFormComponent
-    DynamicFormComponent
-  ],
+    // DynamicFormComponent,
+    RouterOutlet
+],
   templateUrl: './body.component.html',
   styleUrl: './body.component.css',
   // encapsulation: ViewEncapsulation.None

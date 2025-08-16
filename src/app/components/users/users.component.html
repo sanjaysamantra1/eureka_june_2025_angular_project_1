@@ -1,1 +1,24 @@
-<p>users works!</p>
+<h3 class="text-center">User List</h3>
+<hr />
+
+<div class="container">
+  <div class="row">
+    @for (user of users; track $index) {
+    <div class="col-sm-3">
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnyF4T_FASWcTrtTSfJoK-MNLAVa5rNsBZyA&s"
+          class="card-img-top" alt="..." height="250">
+        <div class="card-body text-center">
+          <h5 class="card-title">{{user.id}}</h5>
+          <h5 class="card-title">{{user.username}}</h5>
+          <p class="card-text text-truncate">{{user.name}}</p>
+          <p class="card-text text-truncate">{{user.phone}}</p>
+          <p class="card-text text-truncate">{{user.email}}</p>
+          <p class="card-text">{{user.address.city}}</p>
+          <button class="btn btn-primary" [routerLink]="['/userdetails', user.id]">Details</button>
+        </div>
+      </div>
+    </div>
+    }
+  </div>
+</div>
