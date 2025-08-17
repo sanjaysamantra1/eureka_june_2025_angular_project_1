@@ -7,15 +7,39 @@ import { NotfoundComponent } from './components/notfound/notfound.component';
 import { UsersComponent } from './components/users/users.component';
 import { ProductListComponent } from './components/product-list/product-list.component';
 import { UserdetailsComponent } from './components/userdetails/userdetails.component';
+import { ProductdetailsComponent } from './components/productdetails/productdetails.component';
+import { PermanentjobsComponent } from './components/permanentjobs/permanentjobs.component';
+import { ContractjobsComponent } from './components/contractjobs/contractjobs.component';
+import { UploadVideoComponent } from './components/upload-video/upload-video.component';
+import { trainerGuard } from './guards/trainer.guard';
+import { canexitGuard } from './guards/canexit.guard';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'home', component: HomeComponent },
   { path: 'aboutus', component: AboutusComponent },
-  { path: 'careers', component: CareersComponent },
-  { path: 'contactus', component: ContactusComponent },
+  {
+    path: 'careers',
+    component: CareersComponent,
+    children: [
+      { path: '', component: PermanentjobsComponent },
+      { path: 'permanent', component: PermanentjobsComponent },
+      { path: 'contract', component: ContractjobsComponent },
+    ]
+  },
+  {
+    path: 'contactus',
+    component: ContactusComponent,
+    canDeactivate: [canexitGuard]
+  },
   { path: 'users', component: UsersComponent },
   { path: 'userdetails/:id', component: UserdetailsComponent },
   { path: 'products', component: ProductListComponent },
+  { path: 'productdetails', component: ProductdetailsComponent },
+  {
+    path: 'uploadvideo',
+    component: UploadVideoComponent,
+    canActivate: [trainerGuard]
+  },
   { path: '**', component: NotfoundComponent }
 ];
