@@ -5,7 +5,6 @@ import { CareersComponent } from './components/careers/careers.component';
 import { ContactusComponent } from './components/contactus/contactus.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
 import { UsersComponent } from './components/users/users.component';
-import { ProductListComponent } from './components/product-list/product-list.component';
 import { UserdetailsComponent } from './components/userdetails/userdetails.component';
 import { ProductdetailsComponent } from './components/productdetails/productdetails.component';
 import { PermanentjobsComponent } from './components/permanentjobs/permanentjobs.component';
@@ -34,7 +33,12 @@ export const routes: Routes = [
   },
   { path: 'users', component: UsersComponent },
   { path: 'userdetails/:id', component: UserdetailsComponent },
-  { path: 'products', component: ProductListComponent },
+  {
+    path: 'products',
+    loadComponent: () =>
+      import('./components/product-list/product-list.component').then((x) => x.ProductListComponent)
+    // component: ProductListComponent
+  },
   { path: 'productdetails', component: ProductdetailsComponent },
   {
     path: 'uploadvideo',
